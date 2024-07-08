@@ -40,7 +40,7 @@ app.get("/reset", async (req, res) => {
   } catch (e) {
     return res
       .status(400)
-      .send({ status: "unable to reset instance", error: err });
+      .send({ status: "unable to reset instance", error: e });
   }
 });
 initVenom("test");
@@ -53,7 +53,7 @@ app.get("/init", (req, res) => {
   } catch (e) {
     return res
       .status(400)
-      .send({ status: "unable to start instance", error: err });
+      .send({ status: "unable to start instance", error: e });
   }
 });
 
