@@ -11,7 +11,9 @@ const {
   sendDeliveryToDineIn,
   sendTextMessage,
   sendContactMessage,
-  sendImageMessage
+  sendImageMessage,
+  getAllChat,
+  sendImageToGroup,
 } = require("./controller");
 const { initVenom } = require("./venom_helper");
 const app = express();
@@ -69,6 +71,13 @@ app.post("/send-delivery-to-dine-in", sendDeliveryToDineIn);
 app.post("/send-text", sendTextMessage);
 app.post("/send-contact", sendContactMessage);
 app.post("/send-image", sendImageMessage);
+
+
+app.get("/node ", getAllChat);
+
+
+app.post("/send-image-group", sendImageToGroup);
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
