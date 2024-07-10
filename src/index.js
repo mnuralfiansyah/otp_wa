@@ -46,10 +46,12 @@ app.get("/reset", async (req, res) => {
       .send({ status: "unable to reset instance", error: e });
   }
 });
-initVenom("test");
+initVenom("sandi_kargo");
+
+
 app.get("/init", (req, res) => {
   try {
-    initVenom("admin");
+    initVenom("sandi_kargo");
     return res
       .status(200)
       .send({ status: "Starting instance, get qr after 10 sec" });
@@ -74,7 +76,7 @@ app.post("/send-contact", sendContactMessage);
 app.post("/send-image", sendImageMessage);
 
 
-app.get("/node ", getAllChat);
+app.get("/getAllChat ", getAllChat);
 
 
 app.post("/send-image-group", sendImageToGroup);
