@@ -217,7 +217,12 @@ async function sendImageToGroup(req, res) {
   try {
     const { phone, message, url_image } = req.body;
 
-    console.log(url_image)
+    // console.log(url_image)
+    // console.log(message)
+    // console.log(url_image)
+    // console.log(req.body)
+    // console.log(req)
+    
     if (!phone || !message || !url_image) {
       return res
         .status(404)
